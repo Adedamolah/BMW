@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Landing Page</title>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('road2.JPG') no-repeat center center/cover;
+      color: #fff;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+   nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  backdrop-filter: blur(6px); /* Smooth blur effect */
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #e63946;
+}
+
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      position: relative;
+    }
+
+    .hero-text {
+      max-width: 50%;
+      opacity: 0;
+      transform: translateX(-100px);
+      animation: slideIn 1.5s forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 100px; /* Bigger & Bolder */
+      font-weight: 700;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #fff, #0ff, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px #0ff, 0 0 60px #0ff;
+      animation: glow 2s infinite alternate;
+    }
+
+    .hero-text p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+      to { text-shadow: 0 0 40px #fff, 0 0 80px #0ff; }
+    }
+
+    .car {
+      width: 600px;
+      animation: floatCar 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px #0ff);
+    }
+
+    @keyframes floatCar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      text-shadow: 0 0 10px #0ff;
+      position: relative;
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .car {
+        width: 90%;
+        margin-top: 30px;
+      }
+      .hero-text h1 {
+        font-size: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">BMW</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>BMW Series</h1>
+      <p>Experience the ultimate driving machine.<br>Power. Elegance. Innovation.</p>
+    </div>
+    <img src="car.png" alt="BMW Car" class="car">
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BMW Showcase | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
